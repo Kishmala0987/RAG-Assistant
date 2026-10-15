@@ -1,0 +1,42 @@
+2026-10-13 02:28:31,989 | INFO | src.pipeline | HR Agent is building
+2026-10-13 02:28:31,990 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-13 02:28:33,459 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 200 OK"
+2026-10-13 02:28:33,467 | INFO | src.pipeline | Found an existing Qdrant Collection, connecting to one
+2026-10-13 02:28:33,468 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-13 02:28:33,782 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-13 02:28:34,833 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy "HTTP/1.1 200 OK"
+2026-10-13 02:28:35,301 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-13 02:28:35,866 | INFO | src.vector_store_qdrant | Connected to Qdrant cloud Sccesfully!
+2026-10-13 02:28:37,263 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/scroll "HTTP/1.1 200 OK"
+2026-10-13 02:28:37,269 | INFO | src.chunks | Using BM 25 keyword Retriever
+2026-10-13 02:28:37,277 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-13 02:28:37,669 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-13 02:28:38,183 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:38,506 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-10-13 02:28:38,510 | INFO | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-12-v2, initializing a new CrossEncoder model.
+2026-10-13 02:28:38,825 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:39,139 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-13 02:28:39,471 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:39,790 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-13 02:28:40,122 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:40,444 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-13 02:28:40,770 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:41,103 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-13 02:28:41,426 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:41,740 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-13 02:28:42,746 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:43,059 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-13 02:28:43,418 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:43,734 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-13 02:28:44,055 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-13 02:28:44,380 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-13 02:28:44,478 | INFO | src.llm | Initializing an LLM via Portkey
+2026-10-13 02:28:44,478 | INFO | src.gateway | Routing LLM cals through portkey with automatic fallback (primary = @hrpolicy)
+2026-10-13 02:28:44,642 | INFO | src.agent | HR Agent Ready!!
+2026-10-13 02:28:44,642 | INFO | src.pipeline | HR Agent has been built
+2026-10-13 02:29:06,799 | INFO | __main__ | ====Streamlit Run: new question received ===
+2026-10-13 02:29:07,561 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-13 02:29:09,084 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-13 02:29:17,387 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-13 02:29:20,625 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-13 02:29:21,308 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

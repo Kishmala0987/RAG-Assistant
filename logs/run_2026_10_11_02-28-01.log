@@ -1,0 +1,12 @@
+2026-10-11 02:29:00,692 | INFO | src.pipeline | HR Agent is building
+2026-10-11 02:29:00,694 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-11 02:29:02,802 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 403 Forbidden"
+2026-10-11 02:29:03,184 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 403 Forbidden"
+2026-10-11 02:29:50,202 | INFO | src.pipeline | HR Agent is building
+2026-10-11 02:29:50,203 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-11 02:29:51,858 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 403 Forbidden"
+2026-10-11 02:29:52,683 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 403 Forbidden"
+2026-10-11 02:31:32,412 | INFO | src.pipeline | HR Agent is building
+2026-10-11 02:31:32,420 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-11 02:31:34,971 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 403 Forbidden"
+2026-10-11 02:31:35,694 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 403 Forbidden"

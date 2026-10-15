@@ -1,0 +1,12 @@
+2026-10-13 00:46:54,522 | INFO | src.pipeline | HR Agent is building
+2026-10-13 00:46:54,522 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-13 00:46:56,692 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 200 OK"
+2026-10-13 00:46:56,700 | INFO | src.pipeline | Found an existing Qdrant Collection, connecting to one
+2026-10-13 00:46:56,701 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-13 00:46:57,584 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-13 01:29:50,490 | INFO | src.pipeline | HR Agent is building
+2026-10-13 01:29:50,502 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-13 01:29:54,304 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 200 OK"
+2026-10-13 01:29:54,333 | INFO | src.pipeline | Found an existing Qdrant Collection, connecting to one
+2026-10-13 01:29:54,336 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-13 01:29:54,641 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"

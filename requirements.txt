@@ -9,8 +9,14 @@ langchain-groq
 langchain-text-splitters
 
 #vector store
-
+#local
 faiss-cpu #gpu version is also available
+langchain_chroma
+#cloud
+langchain-qdrant
+qdrant_client
+
+
 
 #notebook
 jupyter
@@ -18,3 +24,17 @@ ipykernel
 
 #web app
 streamlit
+
+#reranking
+sentence-transformers
+
+#keyword search bm25
+rank-bm25
+
+#LLM Gateways
+portkey-ai
+langchain-openai 
+#every ai gives you an openai compatible request code
+
+#Evaluations
+openevals #it is created by Langsmith open source framework
