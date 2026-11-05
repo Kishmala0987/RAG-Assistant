@@ -1,0 +1,291 @@
+2026-10-16 06:27:54,401 | INFO | src.pipeline | HR Agent is building
+2026-10-16 06:27:54,411 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-16 06:27:56,452 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 200 OK"
+2026-10-16 06:27:56,481 | INFO | src.pipeline | Found an existing Qdrant Collection, connecting to one
+2026-10-16 06:27:56,483 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-16 06:27:56,485 | INFO | src.embeddings | Initialized Embedding model: jina-embeddings-v2-base-en
+2026-10-16 06:27:56,862 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 06:27:58,207 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy "HTTP/1.1 200 OK"
+2026-10-16 06:27:58,909 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 06:28:00,144 | INFO | src.vector_store_qdrant | Connected to Qdrant cloud Sccesfully!
+2026-10-16 06:28:01,983 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/scroll "HTTP/1.1 200 OK"
+2026-10-16 06:28:01,994 | INFO | src.chunks | Using BM 25 keyword Retriever
+2026-10-16 06:28:02,025 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-16 06:28:02,696 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 06:28:03,339 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:03,620 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:03,628 | INFO | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-12-v2, initializing a new CrossEncoder model.
+2026-10-16 06:28:03,927 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:04,234 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:04,541 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:04,850 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:05,261 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:05,566 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:05,824 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:06,276 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:06,923 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:07,306 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:08,739 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:09,019 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:09,353 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:09,687 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:09,970 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:10,274 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-16 06:28:10,358 | INFO | src.llm | Initializing an LLM via Portkey
+2026-10-16 06:28:10,358 | INFO | src.gateway | Routing LLM cals through portkey with automatic fallback (primary = @hrpolicy)
+2026-10-16 06:28:10,359 | INFO | src.agent | Creating Hr agent with tools 1
+2026-10-16 06:28:10,365 | INFO | src.agent | HR Agent Ready!!
+2026-10-16 06:28:10,366 | INFO | src.pipeline | HR Agent has been built
+2026-10-16 06:28:10,366 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-16 06:28:10,366 | INFO | src.embeddings | Initialized Embedding model: jina-embeddings-v2-base-en
+2026-10-16 06:28:11,913 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy "HTTP/1.1 200 OK"
+2026-10-16 06:28:12,231 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 06:28:12,835 | INFO | src.vector_store_qdrant | Connected to Qdrant cloud Sccesfully!
+2026-10-16 06:28:14,272 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/scroll "HTTP/1.1 200 OK"
+2026-10-16 06:28:14,274 | INFO | src.chunks | Using BM 25 keyword Retriever
+2026-10-16 06:28:14,280 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-16 06:28:14,576 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:14,589 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 06:28:14,884 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:14,886 | INFO | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-12-v2, initializing a new CrossEncoder model.
+2026-10-16 06:28:15,195 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:15,510 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:15,815 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:16,060 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:16,426 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:16,731 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:17,036 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:17,345 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:17,652 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:17,956 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:18,775 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:19,082 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 06:28:19,393 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:19,707 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-16 06:28:20,005 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 06:28:20,310 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-16 06:28:23,304 | INFO | src.pipeline | User  Question:What must employees do when their employment ends?
+2026-10-16 06:28:24,607 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:25,274 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:25,301 | INFO | src.tools | Search HR Policy called with question: What must employees do when their employment ends?
+2026-10-16 06:28:26,760 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:28:28,709 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:29,609 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:29,613 | INFO | src.pipeline | Final Answer:When an employee’s employment ends, the policy requires them to:
+
+1. **Return all company property** – This includes any equipment, devices, keys, ID badges, documents, or other items that belong to the organization.  
+
+2. **Handle confidential information properly** – Employees must not disclose confidential information to anyone who is not authorized. They must follow the company’s instructions for deleting or returning any confidential data that may be stored on personal devices or on company‑managed systems.  
+
+3. **Continue to honor ongoing obligations** – Even after leaving, employees remain bound by any confidentiality, intellectual‑property, or other agreements they signed while employed.  
+
+In short, departing employees must give back all company assets and ensure that any confidential information is either securely deleted or returned, while also upholding any post‑employment confidentiality obligations.
+2026-10-16 06:28:31,163 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:28:32,681 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:33,730 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:33,737 | INFO | src.pipeline | User  Question:What should an employee do when they become aware of a potential conflict of interest, and does it automatically mean a policy violation?
+2026-10-16 06:28:34,130 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:34,704 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:34,711 | INFO | src.tools | Search HR Policy called with question: What should an employee do when they become aware of a potential conflict of interest and does it automatically mean a policy violation?
+2026-10-16 06:28:36,085 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:28:38,442 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:38,508 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:28:38,509 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:28:58,912 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:28:58,923 | INFO | src.pipeline | Final Answer:**What an employee should do**
+
+1. **Disclose the situation promptly** – As soon as a possible conflict of interest is identified, the employee must inform their manager or the HR department. The policy states that “employees should disclose potential conflicts to their manager or HR department as soon as they become aware of them.” This allows the company to review the circumstance and determine the appropriate course of action.
+
+2. **Provide relevant details** – The disclosure should include any facts that could affect the employee’s ability to make impartial decisions (e.g., personal relationships, financial interests, outside employment, gifts, or any other involvement that might be perceived as influencing business decisions).
+
+3. **Co‑operate with the review** – The employee may be asked to provide additional information or to take temporary steps (such as recusing themselves from a particular decision) while the conflict is assessed.
+
+4. **Follow any mitigation steps** – If HR or management determines that a conflict exists, they will outline how it should be managed (e.g., reassignment of duties, divestiture of an interest, or other controls). The employee must adhere to those instructions.
+
+**Does a potential conflict automatically equal a policy violation?**
+
+No. The policy explicitly notes that *“a potential conflict does not automatically mean that an employee has violated company policy.”* The organization will evaluate the disclosed situation to decide whether a real conflict exists and, if so, what remediation is needed. Disclosure is the key trigger for that evaluation; merely being aware of a possible conflict is not, by itself, a breach.
+
+---
+
+**Bottom line:**  
+- **Action:** Immediately disclose any suspected conflict to a manager or HR, supplying full details.  
+- **Result:** The conflict will be reviewed; it is not automatically a violation, but appropriate mitigation may be required.
+2026-10-16 06:29:00,556 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:29:02,804 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:04,547 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:04,559 | INFO | src.pipeline | User  Question:Does attending training guarantee a promotion or salary increase?
+2026-10-16 06:29:04,705 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:29:04,710 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:29:25,845 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:26,447 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:26,460 | INFO | src.tools | Search HR Policy called with question: Does attending training guarantee a promotion or salary increase?
+2026-10-16 06:29:28,022 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:29:30,153 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:30,228 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:29:30,230 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:29:50,481 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:50,488 | INFO | src.pipeline | Final Answer:Attending training **does not guarantee** a promotion or a salary increase.  
+
+Our policy states that promotions and compensation adjustments are based on a combination of factors such as:
+
+- Your overall performance and achievement of goals  
+- Demonstrated skills and experience relevant to the role  
+- Business needs and the availability of suitable positions  
+- Leadership capability and other job‑related considerations  
+
+While training is encouraged and can help you develop the competencies that support career growth, it is just one piece of the overall evaluation. Promotion and salary decisions are made after reviewing the broader picture of your performance and the organization’s needs.
+2026-10-16 06:29:52,071 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:29:54,516 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:55,436 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:29:55,443 | INFO | src.pipeline | User  Question:When must AI-generated content be reviewed by an employee?
+2026-10-16 06:29:55,509 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:29:55,509 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:30:16,392 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:16,952 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:16,963 | INFO | src.tools | Search HR Policy called with question: When must AI-generated content be reviewed by an employee?
+2026-10-16 06:30:18,790 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:30:20,896 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:20,977 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:30:20,979 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:30:41,619 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:41,625 | INFO | src.pipeline | Final Answer:According to our **Artificial Intelligence and Generative AI** policy, AI‑generated content **must be reviewed by an employee before it is used for any high‑impact purpose**, such as:
+
+- Important business decisions  
+- Customer‑facing communications  
+- Legal or contractual documents  
+- Financial decisions or reports  
+- Any other activity that could have significant consequences for the company, customers, or employees  
+
+In short, whenever the output could affect business outcomes, compliance, or stakeholder relationships, an employee needs to review and take responsibility for its accuracy, quality, confidentiality, and appropriateness.
+2026-10-16 06:30:43,362 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:30:45,518 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:46,505 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:30:46,517 | INFO | src.pipeline | User  Question:What are the rules on entering company data into external AI tools?
+2026-10-16 06:30:46,585 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:30:46,587 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:31:07,123 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:07,762 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:07,773 | INFO | src.tools | Search HR Policy called with question: rules on entering company data into external AI tools
+2026-10-16 06:31:09,579 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:31:12,668 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:12,762 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:31:12,765 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:31:33,434 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:33,441 | INFO | src.pipeline | Final Answer:**Company policy on using external AI tools**
+
+| What the policy says | What you should do |
+|----------------------|--------------------|
+| **Do not** enter any confidential or restricted data into an external AI system. This includes: <ul><li>Customer‑personal or confidential information</li><li>Private employee data (e.g., HR records, salaries)</li><li>Passwords, API keys, or other security credentials</li><li>Proprietary source code or technical designs</li><li>Unreleased product, marketing, financial or strategic information</li></ul> | Keep that data inside approved, company‑controlled systems. If you’re unsure whether something is “restricted,” treat it as confidential and do not copy it into an AI tool. |
+| You may only use an external AI tool **if** the organization has **explicitly approved** the tool **and** the specific use‑case. | Check the approved‑tools list (usually maintained by IT/Information Security) or ask your manager/IT before trying a new AI service. |
+| Any content that **is** generated by an AI tool must be **reviewed and validated** by an employee before it is used for: <ul><li>Business‑critical decisions</li><li>Customer communications</li><li>Legal, compliance, or financial documents</li><li>Any high‑impact activity</li></ul> | Treat AI output like a draft: proofread, verify accuracy, and ensure it meets quality, confidentiality, and compliance standards before publishing or acting on it. |
+| The company may monitor the use of its systems where allowed by law and policy. | Assume that anything you do on a company‑managed device could be logged. Do not rely on “privacy” when using external services. |
+| Employees remain responsible for the **accuracy, quality, confidentiality, and appropriateness** of work produced with AI assistance. | Even when an AI tool is approved, you are still accountable for the final result. |
+
+**Bottom line:**  
+Only use external AI tools that have been formally approved, and never paste confidential, proprietary, or any other restricted company data into them. When you do use an approved tool, always double‑check the AI‑generated output before it goes out or is used for important decisions. If you have any doubt, reach out to your manager, the IT security team, or HR for clarification.
+2026-10-16 06:31:35,181 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:31:37,320 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:39,374 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:31:39,397 | INFO | src.pipeline | User  Question:What should an employee do if they find a discrepancy in their salary or deductions?
+2026-10-16 06:31:39,475 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:31:39,477 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:31:59,853 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:00,402 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:00,480 | INFO | src.tools | Search HR Policy called with question: discrepancy in salary or deductions what should employee do
+2026-10-16 06:32:02,006 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:32:04,565 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:04,652 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:32:04,654 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:32:25,045 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:25,051 | INFO | src.pipeline | Final Answer:If you notice that the amount you were paid—or any deductions, allowances, or other payroll items—doesn’t match what you expect, you should **report it to HR right away**.  
+
+Here’s the recommended process:
+
+| Step | What to do | Why it matters |
+|------|------------|----------------|
+| **1. Review the payslip** | Double‑check your most recent payslip (or payroll statement) to confirm the discrepancy and note the specific line items that look incorrect. | Helps you give HR precise information and speeds up the investigation. |
+| **2. Gather supporting documents** | Collect any relevant documents (employment contract, salary amendment letters, tax forms, bank details, expense reimbursements, etc.) that show what the correct amounts should be. | Provides evidence and context for HR to verify the error. |
+| **3. Contact HR (or Payroll)** | Send an email or submit a ticket to the HR/Payroll team describing the issue, attaching the payslip and any supporting documents, and stating the pay period involved. | HR is responsible for investigating payroll discrepancies, as stated in the policy. |
+| **4. Keep the communication confidential** | Do not discuss another employee’s compensation or share your own payroll details publicly. | Salary information is confidential; unauthorized disclosure can violate policy. |
+| **5. Follow up** | If you don’t hear back within a reasonable time (typically 3‑5 business days), send a polite follow‑up asking for an update. | Ensures the matter stays on the team’s radar and gets resolved promptly. |
+| **6. Await resolution** | HR will investigate, correct any errors, and inform you of the outcome (e.g., a payroll adjustment, a corrected deduction, or an explanation). | The policy says HR will investigate reported discrepancies and provide clarification where necessary. |
+
+**Key points from the HR policy**
+
+- “Any discrepancy in salary, deductions, allowances, or other payroll information should be reported to HR as soon as possible. HR will investigate reported discrepancies and provide clarification where necessary.”  
+- Salary information is confidential; employees must avoid accessing or sharing another employee’s compensation details unless required for their duties.
+
+**Bottom line:** As soon as you spot a mismatch, notify HR with the details and any supporting paperwork. HR will handle the investigation and correct the payroll record if needed. If you have any trouble reaching HR or need further guidance, you can also speak with your direct manager, who can help route the request appropriately.
+2026-10-16 06:32:29,859 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:32:32,119 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:34,363 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:34,377 | INFO | src.pipeline | User  Question:Can an employee assume their leave request is approved once they submit it?
+2026-10-16 06:32:34,457 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:32:34,458 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:32:54,843 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:55,354 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:55,358 | INFO | src.tools | Search HR Policy called with question: Can an employee assume their leave request is approved once they submit it?
+2026-10-16 06:32:57,106 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:32:58,632 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:32:58,702 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:32:58,704 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:33:19,014 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:19,019 | INFO | src.pipeline | Final Answer:No. An employee **cannot assume** a leave request is approved simply because it has been submitted.  
+
+Our HR policy states that *“Employees should not assume that a leave request has been approved until they receive confirmation through the appropriate channel.”* Managers must review each request, consider the employee’s circumstances and the operational needs of the department, and then communicate a decision.  
+
+So, after you submit a leave request, wait for the official approval (e.g., an email, system notification, or written confirmation) before making any plans that depend on that time off. If you haven’t heard back within a reasonable period, feel free to follow up with your supervisor or the HR team.
+2026-10-16 06:33:21,076 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:33:23,716 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:25,592 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:25,609 | INFO | src.pipeline | User  Question:Is remote work an entitlement for employees?
+2026-10-16 06:33:25,677 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:33:25,679 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:33:46,198 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:46,893 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:46,958 | INFO | src.tools | Search HR Policy called with question: Is remote work an entitlement for employees?
+2026-10-16 06:33:48,609 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:33:52,100 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:33:52,182 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:33:52,185 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:34:12,769 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:12,775 | INFO | src.pipeline | Final Answer:Remote work is **not** an entitlement. According to our HR policy, remote work is treated as a **work arrangement** that the organization may permit for eligible employees. It can be modified or withdrawn at any time based on business requirements, performance, security considerations, or operational needs. Employees who work remotely must still meet the same availability, professionalism, and security expectations as those on‑site.
+2026-10-16 06:34:14,320 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:34:17,173 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:18,155 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:18,237 | INFO | src.pipeline | User  Question:Who should an employee notify if they can't attend work due to illness or emergency, and when?
+2026-10-16 06:34:18,311 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:34:18,313 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:34:38,575 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:39,141 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:39,154 | INFO | src.tools | Search HR Policy called with question: who should an employee notify if they can't attend work due to illness or emergency and when
+2026-10-16 06:34:40,829 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:34:42,363 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:34:42,442 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:34:42,443 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:35:02,967 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:03,041 | INFO | src.pipeline | Final Answer:When an employee cannot attend work because of illness, an emergency, or any other legitimate reason, the policy requires them to **notify their immediate supervisor as soon as reasonably possible** – ideally **before the scheduled start time** of their shift. If the situation is unexpected, the employee should still aim to contact the supervisor at the earliest opportunity. (Source: HR policy search result)
+2026-10-16 06:35:04,494 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:35:06,734 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:08,154 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:08,232 | INFO | src.pipeline | User  Question:What is the standard working schedule for full-time employees?
+2026-10-16 06:35:08,305 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:35:08,306 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:35:28,815 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:29,364 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:29,430 | INFO | src.tools | Search HR Policy called with question: standard working schedule for full-time employees
+2026-10-16 06:35:31,316 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:35:32,849 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:32,938 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 06:35:32,939 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 06:35:53,327 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:35:53,332 | INFO | src.pipeline | Final Answer:The standard working schedule for full‑time employees is **eight hours per day, five days a week** (a total of 40 hours per week).  
+
+- Individual departments may set different schedules based on operational needs, and you’ll be informed of your specific hours when you join.  
+- Employees are expected to be on time and available during their assigned hours.  
+
+If you need details about any department‑specific variations, let me know!
+2026-10-16 06:35:59,536 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 06:36:02,032 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 06:36:03,873 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"

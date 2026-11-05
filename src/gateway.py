@@ -46,7 +46,7 @@ whenever trying to request an LLM service or any service,need to send request qi
 # }
 PRIMARY_PROVIDER= "@hrpolicy"
 def get_gateway_llm() -> ChatOpenAI:
-    """Routing LLM cals through portkey with automatic fallback"""
+    """Routing LLM cals through portkey"""
     logger.info(f"Routing LLM cals through portkey with automatic fallback (primary = {PRIMARY_PROVIDER})")
     headers = createHeaders(api_key = config.PORTKEY_API_KEY, provider = "@hrpolicy")
     return ChatOpenAI(

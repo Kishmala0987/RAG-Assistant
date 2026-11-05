@@ -1,0 +1,592 @@
+2026-10-16 05:52:13,216 | INFO | src.pipeline | HR Agent is building
+2026-10-16 05:52:13,218 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com
+2026-10-16 05:52:14,910 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/exists "HTTP/1.1 200 OK"
+2026-10-16 05:52:14,920 | INFO | src.pipeline | Found an existing Qdrant Collection, connecting to one
+2026-10-16 05:52:14,921 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-16 05:52:14,922 | INFO | src.embeddings | Initialized Embedding model: jina-embeddings-v2-base-en
+2026-10-16 05:52:15,519 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 05:52:16,604 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy "HTTP/1.1 200 OK"
+2026-10-16 05:52:17,334 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 05:52:21,513 | INFO | src.vector_store_qdrant | Connected to Qdrant cloud Sccesfully!
+2026-10-16 05:52:23,383 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/scroll "HTTP/1.1 200 OK"
+2026-10-16 05:52:23,396 | INFO | src.chunks | Using BM 25 keyword Retriever
+2026-10-16 05:52:23,432 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-16 05:52:23,763 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 05:52:24,592 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:24,826 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:24,835 | INFO | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-12-v2, initializing a new CrossEncoder model.
+2026-10-16 05:52:25,196 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:25,505 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:25,749 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:26,022 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:26,427 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:26,732 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:27,039 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:27,349 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:27,593 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:27,864 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:30,214 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:30,527 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:30,932 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:31,241 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:31,546 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:31,853 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-16 05:52:32,118 | INFO | src.llm | Initializing an LLM via Portkey
+2026-10-16 05:52:32,119 | INFO | src.gateway | Routing LLM cals through portkey with automatic fallback (primary = @hrpolicy)
+2026-10-16 05:52:32,126 | INFO | src.agent | Creating Hr agent with tools 1
+2026-10-16 05:52:32,148 | INFO | src.agent | HR Agent Ready!!
+2026-10-16 05:52:32,149 | INFO | src.pipeline | HR Agent has been built
+2026-10-16 05:52:32,149 | INFO | src.vector_store_qdrant | Connecting to Qdrant cloud
+2026-10-16 05:52:32,150 | INFO | src.embeddings | Initialized Embedding model: jina-embeddings-v2-base-en
+2026-10-16 05:52:34,291 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy "HTTP/1.1 200 OK"
+2026-10-16 05:52:35,203 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 05:52:35,909 | INFO | src.vector_store_qdrant | Connected to Qdrant cloud Sccesfully!
+2026-10-16 05:52:38,128 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/scroll "HTTP/1.1 200 OK"
+2026-10-16 05:52:38,134 | INFO | src.chunks | Using BM 25 keyword Retriever
+2026-10-16 05:52:38,156 | INFO | sentence_transformers.base.model | No device provided, using cpu
+2026-10-16 05:52:38,465 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:38,710 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:38,715 | INFO | sentence_transformers.base.model | No modules.json found for cross-encoder/ms-marco-MiniLM-L-12-v2, initializing a new CrossEncoder model.
+2026-10-16 05:52:38,953 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:39,082 | INFO | httpx | HTTP Request: GET https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2026-10-16 05:52:39,247 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:39,486 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:39,723 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:39,989 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L-12-v2/resolve/main/adapter_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:40,224 | INFO | httpx | HTTP Request: HEAD https://huggingface.co/cross-encoder/ms-marco-MiniLM-L12-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:40,467 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:40,709 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:40,966 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:41,203 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:42,727 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2 "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:42,967 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2 "HTTP/1.1 200 OK"
+2026-10-16 05:52:43,252 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:43,494 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-10-16 05:52:43,739 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L-12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-10-16 05:52:43,977 | INFO | httpx | HTTP Request: GET https://huggingface.co/api/models/cross-encoder/ms-marco-MiniLM-L12-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-10-16 05:52:49,297 | INFO | src.pipeline | User  Question:What must employees do when their employment ends?
+2026-10-16 05:52:51,861 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:52:52,302 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:52:52,350 | INFO | src.tools | Search HR Policy called with question: What must employees do when their employment ends?
+2026-10-16 05:52:53,987 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:52:58,356 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:52:58,910 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:52:58,916 | INFO | src.pipeline | Final Answer:When an employee’s employment ends, the HR policy requires the following actions:
+
+1. **Return all company property** – This includes laptops, mobile devices, access cards, keys, tools, uniforms, documents, and any other items that belong to the organization.  
+
+2. **Handle confidential information** –  
+   * Do not disclose any confidential or proprietary information to anyone who is not authorized.  
+   * Follow the employer’s instructions for deleting, wiping, or returning any confidential data that may be stored on personal or company‑managed devices.  
+
+3. **Maintain ongoing obligations** – The employee must continue to honor any confidentiality, non‑competition, or intellectual‑property agreements that remain in effect after termination.  
+
+These steps ensure a proper and secure transition when employment ends. If you need guidance on the specific process for returning equipment or wiping data, please let me know.
+2026-10-16 05:53:00,420 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:53:02,574 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-10-16 05:53:02,747 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator _wrapped_evaluator> on run 01a14232-83a0-7052-8fda-c5da5484e373: OpenAIModelNotFoundError("Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}")
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1942, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 194, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 268, in get_score
+    response = judge_with_structured_output.invoke(normalized_messages)  # type: ignore
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 3454, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1984, in _generate
+    _handle_openai_api_error(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 732, in _handle_openai_api_error
+    raise OpenAIModelNotFoundError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIModelNotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+2026-10-16 05:53:02,812 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator groundedness_evaluator> on run 01a14232-83a0-7052-8fda-c5da5484e373: KeyError('context')
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\src\evaluation.py", line 142, in groundedness_evaluator
+    return groundedness_judge(outputs={"answer": outputs["answer"]}, reference_outputs=outputs["context"])
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 219, in get_score
+    formatted_prompt = prompt.format(**filtered_prompt_params)
+KeyError: 'context'
+2026-10-16 05:53:02,860 | INFO | src.pipeline | User  Question:What should an employee do when they become aware of a potential conflict of interest, and does it automatically mean a policy violation?
+2026-10-16 05:53:03,184 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:03,712 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:03,762 | INFO | src.tools | Search HR Policy called with question: potential conflict of interest employee should do and does it automatically mean a policy violation
+2026-10-16 05:53:05,318 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:53:08,714 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:08,907 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 05:53:08,913 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 05:53:29,399 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:29,407 | INFO | src.pipeline | Final Answer:**What an employee should do**
+
+1. **Disclose the situation promptly** – As soon as the employee becomes aware of a possible conflict of interest, they must inform their manager or the HR department (the policy says *“Employees should disclose potential conflicts to their manager or HR department as soon as they become aware of them.”*).
+
+2. **Provide relevant details** – The disclosure should include what the potential conflict is (e.g., a financial interest, personal relationship, outside employment, etc.) and any circumstances that could affect decision‑making.
+
+3. **Co‑operate with the review** – HR (or the designated conflict‑of‑interest committee) will assess the situation, determine whether the conflict can be managed, mitigated, or if any further action is required.
+
+**Does a potential conflict automatically mean a policy violation?**
+
+- **No.** The policy states that a conflict of interest *“may arise”* when personal interests could influence professional duties, but it also makes clear that **having a potential conflict does not automatically constitute a violation**.  
+- The key requirement is **disclosure**. Once disclosed, the organization reviews the facts and decides whether the conflict needs to be mitigated, is acceptable, or does in fact constitute a breach of policy.
+
+**In short:**  
+- **Action:** Report the potential conflict immediately to a manager or HR.  
+- **Automatic violation?** No—only after the situation is evaluated does the company determine whether a policy breach has occurred.
+2026-10-16 05:53:31,039 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:53:32,328 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-10-16 05:53:32,375 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator _wrapped_evaluator> on run 01a14232-b90a-7920-a981-bec493a0cce2: OpenAIModelNotFoundError("Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}")
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1942, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 194, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 268, in get_score
+    response = judge_with_structured_output.invoke(normalized_messages)  # type: ignore
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 3454, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1984, in _generate
+    _handle_openai_api_error(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 732, in _handle_openai_api_error
+    raise OpenAIModelNotFoundError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIModelNotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+2026-10-16 05:53:32,400 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator groundedness_evaluator> on run 01a14232-b90a-7920-a981-bec493a0cce2: KeyError('context')
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\src\evaluation.py", line 142, in groundedness_evaluator
+    return groundedness_judge(outputs={"answer": outputs["answer"]}, reference_outputs=outputs["context"])
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 219, in get_score
+    formatted_prompt = prompt.format(**filtered_prompt_params)
+KeyError: 'context'
+2026-10-16 05:53:32,408 | INFO | src.pipeline | User  Question:Does attending training guarantee a promotion or salary increase?
+2026-10-16 05:53:32,479 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 05:53:32,480 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 05:53:53,564 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:54,171 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:53:54,190 | INFO | src.tools | Search HR Policy called with question: Does attending training guarantee a promotion or salary increase?
+2026-10-16 05:54:00,534 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:54:02,168 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:54:02,243 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 05:54:02,244 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 05:54:22,472 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:54:22,475 | INFO | src.pipeline | Final Answer:Attending training **does not automatically guarantee** a promotion or a salary increase.
+
+According to the HR policy:
+
+- **Training participation** is encouraged, but it is not tied directly to promotion or compensation decisions.  
+- **Promotions** are based on a combination of factors such as performance, demonstrated skills, experience, business requirements, leadership capability, and the availability of suitable positions.  
+- **Salary adjustments** follow the same merit‑based considerations and are not awarded simply for completing a training program.
+
+In short, while training can help you develop the skills and qualifications that *may* make you a stronger candidate for advancement, it alone does not ensure a promotion or raise.
+2026-10-16 05:54:29,414 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:54:30,184 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 404 Not Found"
+2026-10-16 05:54:30,211 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator _wrapped_evaluator> on run 01a14233-2c77-7103-b105-fe35e21168ff: OpenAIModelNotFoundError("Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}")
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1942, in _generate
+    self.root_client.chat.completions.with_raw_response.parse(**payload)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_legacy_response.py", line 369, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\resources\chat\completions\completions.py", line 194, in parse
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<53 lines>...
+        stream=False,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 268, in get_score
+    response = judge_with_structured_output.invoke(normalized_messages)  # type: ignore
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 3454, in invoke
+    input_ = context.run(step.invoke, input_, config, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\runnables\base.py", line 6014, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 488, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1877, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1684, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_core\language_models\chat_models.py", line 2022, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 1984, in _generate
+    _handle_openai_api_error(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langchain_openai\chat_models\base.py", line 732, in _handle_openai_api_error
+    raise OpenAIModelNotFoundError(
+        message=e.message, response=e.response, body=e.body
+    ) from e
+langchain_openai.chat_models.base.OpenAIModelNotFoundError: Error code: 404 - {'error': {'message': 'groq error: The model `openai/gpt-oss` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}, 'provider': 'groq'}
+2026-10-16 05:54:30,224 | ERROR | langsmith.evaluation._runner | Error running evaluator <DynamicRunEvaluator groundedness_evaluator> on run 01a14233-2c77-7103-b105-fe35e21168ff: KeyError('context')
+Traceback (most recent call last):
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\_runner.py", line 1723, in _run_evaluators
+    evaluator_response = evaluator.evaluate_run(  # type: ignore[call-arg]
+        run=run,
+        example=example,
+        evaluator_run_id=evaluator_run_id,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 370, in evaluate_run
+    result = self.func(
+        run,
+        example,
+        langsmith_extra={"run_id": evaluator_run_id, "metadata": metadata},
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\evaluation\evaluator.py", line 791, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\src\evaluation.py", line 142, in groundedness_evaluator
+    return groundedness_judge(outputs={"answer": outputs["answer"]}, reference_outputs=outputs["context"])
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 600, in _wrapped_evaluator
+    res = _run_evaluator_untyped(
+        run_name=run_name,
+    ...<7 lines>...
+        **kwargs,
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 293, in _run_evaluator_untyped
+    results = _run_scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\langsmith\run_helpers.py", line 849, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\utils.py", line 206, in _run_scorer
+    score = scorer(**kwargs)
+  File "C:\Users\PMLS\Desktop\Python_Learning\RAG\PROJECT\rag\Lib\site-packages\openevals\llm.py", line 219, in get_score
+    formatted_prompt = prompt.format(**filtered_prompt_params)
+KeyError: 'context'
+2026-10-16 05:54:30,228 | INFO | src.pipeline | User  Question:When must AI-generated content be reviewed by an employee?
+2026-10-16 05:54:30,297 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 05:54:30,298 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)
+2026-10-16 05:54:51,220 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:54:51,845 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:54:51,854 | INFO | src.tools | Search HR Policy called with question: When must AI-generated content be reviewed by an employee?
+2026-10-16 05:54:57,873 | INFO | httpx | HTTP Request: POST https://e1020a8b-de95-406d-92e8-4f3c9d4ac151.sa-east-1-0.aws.cloud.qdrant.io:6333/collections/hr_policy/points/query "HTTP/1.1 200 OK"
+2026-10-16 05:55:00,036 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-16 05:55:00,121 | INFO | httpx2 | HTTP Request: POST https://api.portkey.ai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2026-10-16 05:55:00,123 | INFO | openai._base_client | Retrying request in 20.000000 seconds (retry 1 of 2)

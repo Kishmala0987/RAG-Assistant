@@ -1,0 +1,12 @@
+.env
+.env.docker
+.vscode/
+.git
+.gitignore
+
+README.md
+rag.ipynb
+
+*.pyc
+rag/
+logs/

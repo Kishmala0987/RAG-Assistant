@@ -6,5 +6,5 @@ from src.logger import get_logger
 logger = get_logger(__name__)
 def create_embeddings():
     "Return JINA Embeddings model"
-    logger.info("Initialized Embedding model:", config.EMBEDDING_MODEL_NAME)
+    logger.info(f"Initialized Embedding model: {config.EMBEDDING_MODEL_NAME}")
     return JinaEmbeddings(model_name=config.EMBEDDING_MODEL_NAME)

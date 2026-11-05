@@ -1,2 +1,6 @@
-rag
+rag/
 .env
+.env.docker
+logs/
+.vscode/
+data/

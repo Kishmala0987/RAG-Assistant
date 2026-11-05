@@ -10,8 +10,8 @@ langchain-text-splitters
 
 #vector store
 #local
-faiss-cpu #gpu version is also available
-langchain_chroma
+#faiss-cpu #gpu version is also available
+#langchain_chroma
 #cloud
 langchain-qdrant
 qdrant_client
@@ -19,8 +19,8 @@ qdrant_client
 
 
 #notebook
-jupyter
-ipykernel
+#jupyter
+#ipykernel
 
 #web app
 streamlit

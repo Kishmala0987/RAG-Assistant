@@ -15,7 +15,7 @@ def create_search_tool(semantic_retriever, keyword_retriever, reranker):
         company policies, leave, benefits, working hours, remote work,
         and other HR-related questions.
         """
-        logger.info("Search HR Policy called with question:", question)
+        logger.info(f"Search HR Policy called with question: {question}")
         semantic_chunks = semantic_retriever.invoke(question)
         keyword_chunks = keyword_retriever.invoke(question)
 

@@ -1,0 +1,2 @@
+2026-11-03 02:41:36,757 | INFO | src.pipeline | HR Agent is building
+2026-11-03 02:41:36,758 | INFO | src.tracing | LangSmith tracing enable for project HR_Policy_Assistant, Traces at https://api.smith.langchain.com

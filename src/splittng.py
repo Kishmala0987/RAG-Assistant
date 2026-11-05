@@ -12,5 +12,5 @@ def split_into_chunks(documents):
     )
     logger.info("Initialized a Recursive Character Text Splitter object")
     chunks = text_splitter.split_documents(documents)
-    logger.info("Documents are split into chunks. Total Chunks:", len(chunks))
+    logger.info(f"Documents are split into chunks. Total Chunks: {len(chunks)}")
     return chunks
