@@ -105,6 +105,18 @@ jobs:
             chmod 600 "$HOME/.env"
 
             echo "==> Checking AWS credentials"
+
+            echo "==> Checking credential transmission"
+
+            echo "Access key length: ${#AWS_ACCESS_KEY_ID}"
+            echo "Secret key length: ${#AWS_SECRET_ACCESS_KEY}"
+
+            echo "==> Checking EC2 system time"
+            date -u
+
+            echo "==> Checking AWS CLI version"
+            aws --version
+
             aws sts get-caller-identity
 
             echo "==> Logging in to ECR"
