@@ -4,3 +4,7 @@ rag/
 logs/
 .vscode/
 data/
+
+#aws
+hr-rag_accessKeys.csv
+keytoconnect.pem
