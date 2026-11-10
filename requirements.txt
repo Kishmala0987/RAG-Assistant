@@ -38,3 +38,6 @@ langchain-openai
 
 #Evaluations
 openevals #it is created by Langsmith open source framework
+
+#tests
+pytest
