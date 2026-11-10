@@ -77,8 +77,9 @@ jobs:
           EVAL_LIMIT: "5"
         run: python evaluate.py
 
-        
+
   build-and-push:
+    needs: evaluate
     runs-on: ubuntu-latest
     outputs:
       image: ${{ steps.build.outputs.image }}
